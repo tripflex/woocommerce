@@ -196,15 +196,14 @@ class WC_Meta_Box_Product_Data {
 							<tfoot>
 								<tr>
 									<th colspan="5">
-										<a href="#" class="button insert" data-row="<?php
-											$file = array(
-												'file' => '',
-												'name' => ''
-											);
-											ob_start();
-											include( 'views/html-product-download.php' );
-											echo esc_attr( ob_get_clean() );
-										?>"><?php _e( 'Add File', 'woocommerce' ); ?></a>
+									<?php
+										$file = array( 'file' => '', 'name' => '' );
+										ob_start();
+										include( 'html-product-variation-download.php' );
+									?>
+										<a href="#" class="button insert" data-row="<?php echo esc_attr( ob_get_clean() ); ?>">
+											<?php _e( 'Add File', 'woocommerce' ); ?>
+										</a>
 									</th>
 								</tr>
 							</tfoot>
